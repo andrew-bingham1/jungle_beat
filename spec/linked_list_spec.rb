@@ -9,4 +9,11 @@ RSpec.describe LinkedList do
     expect(list).to be_a LinkedList
     expect(list.head).to eq(nil)
   end
+
+  it '#can do append method' do
+    list = LinkedList.new 
+  
+    expect(list.append('doop')).to eq('doop')
+    require 'pry'; binding.pry
+  end
 end
