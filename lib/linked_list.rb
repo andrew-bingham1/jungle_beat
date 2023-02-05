@@ -8,8 +8,8 @@ class LinkedList
     @head = nil
     @nodes = 0
     @node_string = ""
-  
   end
+
 
   def append(data)
     @nodes += 1
@@ -29,6 +29,7 @@ class LinkedList
 
   end
 
+
   def count
     @nodes
   end
@@ -36,6 +37,7 @@ class LinkedList
   def to_string
     node_string.chomp(" ")
   end
+
   
   def prepend(data)
     @nodes += 1
@@ -53,7 +55,29 @@ class LinkedList
 
   end
 
-  
+  def insert(loc,data)
+    @nodes += 1
+    if @head == nil
+      @head = Node.new(data)
+    else
+      current_node = @head
+      (loc - 1).times do 
+        current_node = current_node.next_node
+      end
+      new_node = Node.new(data) 
+      new_node.next_node = current_node.next_node
+      current_node.next_node = new_node
+    end
+
+    @node_string = ""
+    string_node = @head
+    until(string_node == nil)
+      node_string << "#{string_node.data} "
+      string_node = string_node.next_node
+    end
+
+    return data
+  end
 
 
 
