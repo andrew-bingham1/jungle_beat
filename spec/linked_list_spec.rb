@@ -42,5 +42,14 @@ RSpec.describe LinkedList do
     
     
     expect(list.prepend('bop')).to eq('bop')
+    expect(list.head.data).to eq('bop')
+  end
+  
+  it '#can insert' do 
+  list = LinkedList.new
+  list.append('doop')
+  list.append('bop')
+
+  require 'pry'; binding.pry
   end
 end
