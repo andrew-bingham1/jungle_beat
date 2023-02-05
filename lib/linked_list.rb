@@ -2,15 +2,13 @@ require 'node.rb'
 
 class LinkedList
   
-  attr_accessor :head, :nodes, :node_string, :previous_node, :current_node, :after_node
+  attr_accessor :head, :nodes, :node_string
 
   def initialize
     @head = nil
     @nodes = 0
     @node_string = ""
-    @previous_node = previous_node
-    @current_node = current_node
-    @after_node = after_node
+  
   end
 
   def append(data)
@@ -32,13 +30,28 @@ class LinkedList
   end
 
   def count
-    nodes
+    @nodes
   end
 
   def to_string
     node_string.chomp(" ")
   end
   
+  def prepend(data)
+    @nodes += 1
+    node_string[0,0] = "#{data} "
+
+    if @head == nil
+      @head = Node.new(data)
+    else
+      after_node = @head
+      @head = Node.new(data)
+      self.head.next_node = after_node
+    end
+
+    return data
+
+  end
 
   
 
