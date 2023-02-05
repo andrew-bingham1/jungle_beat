@@ -2,7 +2,7 @@ require 'node.rb'
 
 class LinkedList
   
-  attr_accessor :head, :node_string, :nodes, :current_node, :node, :previous_node 
+  attr_accessor :head, :nodes, :node_string, :previous_node, :current_node, :after_node
 
   def initialize
     @head = nil
@@ -10,21 +10,21 @@ class LinkedList
     @node_string = ""
     @previous_node = previous_node
     @current_node = current_node
-    
+    @after_node = after_node
   end
 
   def append(data)
-    node = Node.new(data)
-    @current_node = node
     @nodes += 1
-    node_string << "#{data} "
-    
-    if @head == nil
-      @head = node
-    end
+    @node_string << "#{data} "
 
-    if head.next_node == nil 
-      head.next_node = node
+    if @head == nil
+      @head = Node.new(data)
+    else
+      last_node = @head
+      while last_node.next_node != nil
+        last_node = last_node.next_node
+      end
+      last_node.next_node = Node.new(data)
     end
     
     return data
@@ -32,42 +32,13 @@ class LinkedList
   end
 
   def count
-    @nodes
+    nodes
   end
 
   def to_string
-    node_string.chomp!(" ")
-    node_string
+    node_string.chomp(" ")
+  end
   
-  end
-
-  def prepend(data)
-    node = Node.new(data)
-    @nodes += 1
-    node_string[0,0] = "#{data} "
-    @head = node
-
-    if @nodes == 0
-      head.next_node = nil
-    end
-
-    return data
-
-  end
-
-  def insert(location, value)
-    node = list.head
-    
-    (location += -1).times do
-      node.next_node
-    end
-
-    previous_node = node.next_node
-    list.append(value)
-    node.next_node = previous_node
-
-    return node.data
-  end
 
   
 
