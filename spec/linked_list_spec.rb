@@ -46,10 +46,13 @@ RSpec.describe LinkedList do
   end
   
   it '#can insert' do 
-  list = LinkedList.new
-  list.append('doop')
-  list.append('bop')
+    list = LinkedList.new
+    
+    list.append('doop')
+    list.append('bop')
+    list.append('deep')
+    list.insert(1,"second")
 
-  require 'pry'; binding.pry
+    expect(list.to_string).to eq('doop second bop deep')
   end
 end
