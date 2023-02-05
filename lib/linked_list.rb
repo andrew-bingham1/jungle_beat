@@ -55,6 +55,7 @@ class LinkedList
 
   end
 
+
   def insert(loc,data)
     @nodes += 1
     if @head == nil
@@ -79,6 +80,7 @@ class LinkedList
     return data
   end
 
+
   def find(node_num,num_to_return)
     find_node = @head
     find_string = ""
@@ -93,6 +95,18 @@ class LinkedList
     end
 
     return find_string.chomp(" ")
+  end
+
+
+  def includes?(data)
+  include_node = @head
+    while(include_node.next_node != nil)
+      if include_node.data == data
+        return true
+      else
+        return false
+      end
+    end
   end
 
 end

@@ -77,6 +77,6 @@ RSpec.describe LinkedList do
     list.append('shi')
 
     expect(list.includes?("deep")).to eq(true)
-    excpect(list.includes?("dep")).to eq(false)
+    expect(list.includes?("dep")).to eq(false)
   end
 end
