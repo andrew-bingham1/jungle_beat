@@ -10,10 +10,29 @@ RSpec.describe LinkedList do
     expect(list.head).to eq(nil)
   end
 
-  it '#can do append method' do
+  it '#can append' do
     list = LinkedList.new 
   
     expect(list.append('doop')).to eq('doop')
-    require 'pry'; binding.pry
+  end
+
+  it '#can count nodes' do 
+    list = LinkedList.new
+
+    list.append('doop')
+    list.append('bop')
+    list.append('deep')
+
+    expect(list.count).to eq(3)
+  end
+
+  it '#can give string' do
+    list = LinkedList.new
+
+    list.append('doop')
+    list.append('bop')
+    list.append('deep')
+
+    expect(list.to_string).to eq('doop bop deep')
   end
 end
