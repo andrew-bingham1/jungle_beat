@@ -83,7 +83,7 @@ class LinkedList
     find_node = @head
     find_string = ""
 
-    (node_num - 1).times do 
+    (node_num).times do 
       find_node = find_node.next_node
     end
 
