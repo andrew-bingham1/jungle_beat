@@ -79,6 +79,20 @@ class LinkedList
     return data
   end
 
+  def find(node_num,num_to_return)
+    find_node = @head
+    find_string = ""
 
+    (node_num - 1).times do 
+      find_node = find_node.next_node
+    end
+
+    (num_to_return).times do
+      find_string << "#{find_node.data} "
+      find_node = find_node.next_node
+    end
+
+    return find_string.chomp(" ")
+  end
 
 end
