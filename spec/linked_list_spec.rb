@@ -96,4 +96,10 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq('deep woo shi')
   end
 
+  it '#can pop - edge case' do
+    list = LinkedList.new
+
+    expect(list.pop).to eq("Not enough nodes")
+  end
+
 end
