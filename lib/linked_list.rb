@@ -111,25 +111,26 @@ class LinkedList
   end
 
   def pop
-    @nodes += -1
-    current_node = @head
-    pop_string = ""
-    until(current_node.next_node.next_node == nil)
-      current_node = current_node.next_node
-    end
-    
-    pop_string << "#{current_node.next_node.data} "
-    current_node.next_node = nil
+    if @nodes >= 1
+      @nodes += -1
+      current_node = @head
+      pop_string = ""
+      until(current_node.next_node.next_node == nil)
+        current_node = current_node.next_node
+      end
+      
+      pop_string << "#{current_node.next_node.data} "
+      current_node.next_node = nil
 
-    @node_string = ""
-    string_node = @head
-    until(string_node == nil)
-      node_string << "#{string_node.data} "
-      string_node = string_node.next_node
-    end
-    return pop_string.chomp(" ")
-
-
+      @node_string = ""
+      string_node = @head
+      until(string_node == nil)
+        node_string << "#{string_node.data} "
+        string_node = string_node.next_node
+      end
+      return pop_string.chomp(" ")
+    else
+      puts "Not enough nodes"
   end
 
 end
