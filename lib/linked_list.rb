@@ -134,31 +134,3 @@ class LinkedList
 
 end
 
-# junk code
- # until(node.next_node.next_node == nil)
-    #   node = node.next_node
-    #   if node.next_node.next_node == nil
-    #     pop_string << "#{node.next_node.data} "
-    #     node.next_node = nil
-    #   end
-    
-    # end
-
-    # return pop_string
-    
-
-    
-
-    # current_node = node
-    # return node.data
-    # node.next_node = nil
-    # node = current_node
-    
-    
-
-    # @node_string = ""
-    # node = @head
-    # until(node.next_node == nil)
-    #   node_string << "#{pop_node.data} "
-    #   pop_node = pop_node.next_node
-    # end
