@@ -83,15 +83,17 @@ RSpec.describe LinkedList do
   it '#can pop' do
     list = LinkedList.new
 
-    list.append('deep')
+    # list.append('deep')
     list.append('woo')
+    list.prepend('deep')
     list.append('shi')
     list.append('shu')
     list.append('blop')
 
+    # require 'pry'; binding.pry
     expect(list.pop).to eq('blop')
     expect(list.pop).to eq('shu')
     expect(list.to_string).to eq('deep woo shi')
   end
-  
+
 end

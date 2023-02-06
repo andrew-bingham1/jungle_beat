@@ -2,12 +2,13 @@ require 'node.rb'
 
 class LinkedList
   
-  attr_accessor :head, :nodes, :node_string
+  attr_accessor :head, :nodes, :node_string, :node
 
   def initialize
     @head = nil
     @nodes = 0
     @node_string = ""
+    @node = node
   end
 
 
@@ -109,4 +110,55 @@ class LinkedList
     end
   end
 
+  def pop
+    @nodes += -1
+    current_node = @head
+    pop_string = ""
+    until(current_node.next_node.next_node == nil)
+      current_node = current_node.next_node
+    end
+    
+    pop_string << "#{current_node.next_node.data} "
+    current_node.next_node = nil
+
+    @node_string = ""
+    string_node = @head
+    until(string_node == nil)
+      node_string << "#{string_node.data} "
+      string_node = string_node.next_node
+    end
+    return pop_string.chomp(" ")
+
+
+  end
+
 end
+
+# junk code
+ # until(node.next_node.next_node == nil)
+    #   node = node.next_node
+    #   if node.next_node.next_node == nil
+    #     pop_string << "#{node.next_node.data} "
+    #     node.next_node = nil
+    #   end
+    
+    # end
+
+    # return pop_string
+    
+
+    
+
+    # current_node = node
+    # return node.data
+    # node.next_node = nil
+    # node = current_node
+    
+    
+
+    # @node_string = ""
+    # node = @head
+    # until(node.next_node == nil)
+    #   node_string << "#{pop_node.data} "
+    #   pop_node = pop_node.next_node
+    # end
