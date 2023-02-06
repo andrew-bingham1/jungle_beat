@@ -3,7 +3,7 @@ require './lib/node'
 require './lib/linked_list'
 
 RSpec.describe LinkedList do 
-  it '#initalize' do
+  it '#initialize' do
     list = LinkedList.new
 
     expect(list).to be_a LinkedList
@@ -94,6 +94,12 @@ RSpec.describe LinkedList do
     expect(list.pop).to eq('blop')
     expect(list.pop).to eq('shu')
     expect(list.to_string).to eq('deep woo shi')
+  end
+
+  it '#can pop - edge case' do
+    list = LinkedList.new
+
+    expect(list.pop).to eq("Not enough nodes")
   end
 
 end
