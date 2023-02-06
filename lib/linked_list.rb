@@ -130,7 +130,8 @@ class LinkedList
       end
       return pop_string.chomp(" ")
     else
-      puts "Not enough nodes"
+      return "Not enough nodes"
+    end
   end
 
 end
