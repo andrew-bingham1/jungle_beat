@@ -20,3 +20,4 @@ class JungleBeat
   def count
     self.list.nodes
   end
+end
