@@ -17,7 +17,6 @@ class JungleBeat
     return self.list.node_string.chomp(" ")
   end
 
-  
-
-
-end
+  def count
+    self.list.nodes
+  end
