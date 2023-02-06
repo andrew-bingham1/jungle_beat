@@ -17,4 +17,10 @@ RSpec.describe JungleBeat do
     expect(jb.append("deep dop do")).to eq("deep dop do")
   end
 
+  it '#can count' do
+    jb = JungleBeat.new
+    jb.append("deep dop do")
+
+    expect(jb.count).to eq(3)
+  end
 end
