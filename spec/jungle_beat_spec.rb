@@ -10,4 +10,11 @@ RSpec.describe JungleBeat do
     expect(jb).to be_a(JungleBeat)
     expect(jb.list.head).to eq(nil)
   end
+
+  it '#can append' do
+    jb = JungleBeat.new
+    
+    expect(jb.append("deep dop do")).to eq("deep dop do")
+  end
+
 end
