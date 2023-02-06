@@ -3,7 +3,7 @@ require './lib/node'
 require './lib/linked_list'
 
 RSpec.describe LinkedList do 
-  it '#initalize' do
+  it '#initialize' do
     list = LinkedList.new
 
     expect(list).to be_a LinkedList
