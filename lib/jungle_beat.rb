@@ -33,5 +33,9 @@ class JungleBeat
     beats = self.list.node_string.chomp(" ")
     `say -r 500 -v Tessa #{beats}`
   end
+
+  def all
+    self.list.node_string.chomp(" ")
+  end
   
 end
