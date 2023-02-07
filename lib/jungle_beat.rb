@@ -5,13 +5,18 @@ class JungleBeat
   attr_accessor :list
   def initialize
     @list = LinkedList.new
+    @accepted_sounds = ["tee", "dee", "deep", "bop", "boop", "la", "na", "ding",
+     "dah", "oom"]
   end
 
   def append(words)
     words_string = words
     words_arr = words_string.split(" ")
     words_arr.each do |word|
-      list.append(word)
+      if accepted_sounds.find(word)
+        list.append(word)
+      else
+      end
     end
 
     return self.list.node_string.chomp(" ")
