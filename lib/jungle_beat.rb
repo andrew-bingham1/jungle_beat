@@ -20,4 +20,10 @@ class JungleBeat
   def count
     self.list.nodes
   end
+
+  def play
+    beats = self.list.node_string.chomp(" ")
+    `say -r 500 -v Tessa #{beats}`
+  end
+  
 end
