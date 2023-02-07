@@ -38,9 +38,10 @@ RSpec.describe JungleBeat do
     require 'pry'; binding.pry
   end
 
-  it '#can do all'
+  it '#can do all' do
     jb = JungleBeat.new
 
     jb.append("deep dop do")
     expect(jb.all).to eq("deep dop do")
+    end
 end
