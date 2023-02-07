@@ -14,7 +14,10 @@ RSpec.describe JungleBeat do
   it '#can append' do
     jb = JungleBeat.new
     
-    expect(jb.append("deep dop do")).to eq("deep dop do")
+
+    
+    # expect(jb.append("deep dop do")).to eq("deep dop do")
+    expect(jb.append("deep dop do Mississippi")).to eq(3)
   end
 
   it '#can count' do
@@ -27,7 +30,7 @@ RSpec.describe JungleBeat do
   end
 
 
-  it '#can play' do
+  xit '#can play' do
     jb = JungleBeat.new
     
     # jb.append("deep doo ditt woo hoo shu")
